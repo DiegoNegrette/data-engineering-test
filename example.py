@@ -1,7 +1,7 @@
 import argparse
 import datetime
 
-from api import _get_daily_data_by_date
+from api import _get_weekly_data_by_date
 from models import VaccineData
 from settings import db_handler, logging
 from utils import remove_repeated_dicts_from_list
@@ -13,7 +13,7 @@ EXAMPLE_DATE = datetime.datetime(2022, 7, 1)
 def main(**kwargs):
     new_items_list = []
     db_handler.start_session()
-    data_results = _get_daily_data_by_date(EXAMPLE_DATE, **kwargs)
+    data_results = _get_weekly_data_by_date(EXAMPLE_DATE, **kwargs)
     data_results = remove_repeated_dicts_from_list(data_results)
     total_records = len(data_results)
     logging.debug(f"{total_records} item(s) where found")
