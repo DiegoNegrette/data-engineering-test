@@ -8,7 +8,7 @@ from utils import format_datetime_obj
 def _get_data_between_dates(start_date, end_date, **kwargs):
     start_date = format_datetime_obj(start_date)
     end_date = format_datetime_obj(end_date)
-    limit = kwargs.get('limit', 2000)
+    limit = kwargs.get('limit', 5000)
     client = Socrata(
         DATA_BASE_URL, APP_TOKEN,
         username=APP_USERNAME,

@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, select
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
@@ -35,11 +35,3 @@ class Database:
     def bulk_create_objs(self, obj_list):
         self.session.add_all(obj_list)
         self.session.commit()
-
-    def select_all(self, model):
-        result = self.session.execute(select(model).order_by(model.day.desc()))
-        return result.scalars().all()
-
-    def select_first(self, model):
-        result = self.session.execute(select(model).order_by(model.day.desc()))
-        return result.fetchone()[0]
