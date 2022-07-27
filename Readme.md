@@ -69,3 +69,7 @@ https://dev.socrata.com/foundry/analisi.transparenciacatalunya.cat/irki-p3c7
 -   Create database tables by running: python create_db.py
 
 -   Run python main.py or python example.py
+
+## ADDITIONAL INFORMATION
+
+A record.log file is created to store results coming from all tasks as well as exceptions
